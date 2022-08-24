@@ -1,3 +1,5 @@
+from typing import Dict
+
 from .netxtypes import *
 
 
@@ -59,6 +61,7 @@ def read_vecsv(path: str, comments="#", header=True, separator=",", create_using
         g = nx.Graph()
 
     # read nodes
+    idmap: Dict[int, int] = dict()
     columns = None
     with open(vfile) as vfin:
         for line in vfin:
@@ -77,9 +80,12 @@ def read_vecsv(path: str, comments="#", header=True, separator=",", create_using
             # end
             props = list(map(parse, line.split(separator)))
 
-            node = props[0]
+            node = len(idmap)
+            idmap[props[0]] = node
+
+            # node = props[0]
             nattrs = dict()
-            for i in range(1, len(columns)):
+            for i in range(0, len(columns)):
                 nattrs[columns[i]] = props[i]
 
             g.add_node(node, **nattrs)
@@ -103,11 +109,11 @@ def read_vecsv(path: str, comments="#", header=True, separator=",", create_using
                     columns = [f"c{i + 1:02}" for i in range(ncols)]
             # end
             edge = list(map(parse, line.split(separator)))
-            source = edge[0]
-            target = edge[1]
+            source = idmap[edge[0]]
+            target = idmap[edge[1]]
 
             eattrs = dict()
-            for i in range(2, len(columns)):
+            for i in range(0, len(columns)):
                 eattrs[columns[i]] = props[i]
 
             g.add_edge(source, target, **eattrs)
