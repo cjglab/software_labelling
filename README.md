@@ -5,42 +5,38 @@ Content of the directory
 ------------------------
 
     - app_experiments_spl.py
-        main application used to apply the analysis protocols to the SPL graph and
+        main application used to apply the analysis protocols to the SPL proprietary software's graph and
         to collect results and data for plots
     - app_experiments_syntetic_swap.py
         main application used to generate synthetic graphs to apply the analysis protocols and
         to collect results and data for plots
+
     - experiments.py
-        implementation of the loops used to select the nodes using the protocols, apply the
+        module used by the two main applications, that implements the loops used to select the nodes using the protocols, apply the
         label propagation algorithm and collect the statistics
     - [netx]
-        extensions for networkx library
+        module extending NetworkX library, that is used by experiments.py module
+
     - [data] datasets
         '4c00c2ca-component-graph-1-r00-vertices.csv'
         '4c00c2ca-component-graph-1-r00-edges.csv'
-            graph representation of the proprietary software
+            Graph representation of the proprietary software
+        'spl-results.csv'
+            Results collected from the experiments, using different protocols, carried out on the proprietary software
 
         'jdeps-2.8.0.odem'
-            Object Dependency Exploration Model (ODEM) file describing the structure of CDA application
-            It contains 21 disconnected nodes, 4 components with 2 nodes, 1 component with 3 nodes and
-            a component with only 5 nodes plus the largest component composed by 1213 nodes and 6030 edges.
+            Object Dependency Exploration Model (ODEM) file describing the structure of CDA software.
+            It contains 21 isolated nodes, 4 connected components with 2 nodes, 1 connected component with 3 nodes,
+            a connected component with only 5 nodes, and the largest connected component composed by 1213 nodes and 5692 edges.
         'jdeps-2.8.0-connected.odem'
-            As 'jdeps-2.8.0.odem' but containing only the largest component (1213 nodes, 6030 edges).
-
+            As 'jdeps-2.8.0.odem' but containing only the largest connected component (1213 nodes, 5692 edges).
         'jdeps-categories-all.csv'
-            Map used to convert Java namespaces in a shorted string
-        'jdeps-categories-c5.csv'
-            Map used to convert Java namespaces in a 5 different categories
+            One-to-one map used to convert Java namespaces into abbreviated names
         'jdeps-categories-c7.csv'
-            Map used to convert Java namespaces in a 7 different categories
-        'jdeps-categories-c9.csv'
-            Map used to convert Java namespaces in a 9 different categories
-
-        'spl-results.csv'
-            Collected results of the analysis protocols applied to the proprietary software
+            Map representing the grouping of Java namespaces into 7 different categories
 
     - [experiments]
-        the directory will contain the csv result files of the experiments
+         This empty directory is necessarily created, for containing the csv result files when launching the experiments
 
 File formats
 ------------
