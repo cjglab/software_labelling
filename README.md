@@ -1,5 +1,5 @@
-# software_labelling
-Supplementary material and data related to paper titled "Software class labeling with semi-supervised predictions on graphs" submitted to ICSE 2023
+# _Software class labeling with semi-supervised predictions on graphs_, ICSE 2023
+This repository contains the supplementary material and data related to paper titled "Software class labeling with semi-supervised predictions on graphs" submitted to ICSE 2023
 
 Content of the directory
 ------------------------
