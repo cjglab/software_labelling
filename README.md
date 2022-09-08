@@ -1,5 +1,5 @@
 # software_labelling
-ICSE2023: Software class labelling
+Supplementary material and data related to paper titled "Software class labeling with semi-supervised predictions on graphs" submitted to ICSE 2023
 
 Content of the directory
 ------------------------
