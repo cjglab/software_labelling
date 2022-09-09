@@ -42,19 +42,19 @@ def try_params(rho, force=False):
 
 
 def main():
-    # rhos = [0.8]
     # rhos = [0.1, 0.3, 0.5, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95]
+    # rhos = [0.80]
     # rhos = [0.85]
     # rhos = [0.65]
-    rhos = [0.65, 0.7, 0.75, 0.8, 0.85]
     # rhos = [0.75]
+    rhos = [0.65, 0.7, 0.75, 0.8, 0.85]
 
-    params = []
+    # execute sequentially
     for rho in rhos:
         try_params(rho, force=True)
-        # params.append(rho)
 
-    # Parallel(n_jobs=4)(delayed(try_params)(rho) for rho in params)
+    # execute in parallel
+    # Parallel(n_jobs=4)(delayed(try_params)(rho) for rho in rhos)
     pass
 # end
 

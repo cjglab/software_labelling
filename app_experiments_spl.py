@@ -34,12 +34,10 @@ def try_params(rho, force=False):
 def main():
     rhos = [1.0]
 
-    params = []
     for rho in rhos:
         try_params(rho, force=True)
-        # params.append(rho)
 
-    # Parallel(n_jobs=4)(delayed(try_params)(rho) for rho in params)
+    # Parallel(n_jobs=4)(delayed(try_params)(rho) for rho in rhos)
     pass
 # end
 
